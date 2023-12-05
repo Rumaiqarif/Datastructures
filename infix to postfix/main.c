@@ -116,7 +116,7 @@ else
   }
 
 
-//function for pop from the stack
+//function for pop elements  from the stack
   char pop(){
     char item;
     item=stack[top];
