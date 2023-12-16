@@ -66,9 +66,12 @@ int main() {
 // function for adding an element at beginning of the list
 void addatbegin(int ele)
 {
-
   struct node *newnode;
   newnode = (struct node *)malloc(sizeof(struct node));
+  if(newnode ==   NULL){
+    // memory allocation failed:
+    break;
+  };
   newnode->data = ele;
   newnode->next = start;
   start = newnode;
@@ -91,6 +94,9 @@ void addatend(int ele)
 {
   struct node *newnode;
   newnode = (struct node *)malloc(sizeof(struct node));
+  if(newnode ==   NULL){
+    break;
+  };
   newnode->data = ele;
   newnode->next = NULL;
   struct node *handle = start;
@@ -106,6 +112,9 @@ void appendAfter(int afterwhichele, int ele)
 {
   struct node *newnode;
   newnode = (struct node *)malloc(sizeof(struct node));
+  if(newnode ==   NULL){
+    break;
+  };
   newnode->data = ele;
   struct node *handle = start;
   while (handle != NULL) {
@@ -128,6 +137,9 @@ void prepandbefore(int beforewhichele, int ele)
 {
   struct node *newnode;
   newnode = (struct node *)malloc(sizeof(struct node));
+  if(newnode ==   NULL){
+    break;
+  };
   newnode->data = ele;
   struct node *current = start;
   struct node *previous = start;
